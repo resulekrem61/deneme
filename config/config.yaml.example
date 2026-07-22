@@ -1,0 +1,63 @@
+# Kartavçı - Örnek Konfigürasyon Dosyası
+
+# Scope Yönetimi
+scope:
+  urls:
+    - https://example.com
+    - https://api.example.com
+  wildcards:
+    - https://*.example.com
+  exclude_patterns:
+    - /logout
+    - /admin
+    - /user/profile
+
+# API Anahtarları
+api_keys:
+  shodan: "YOUR_SHODAN_API_KEY"
+  censys: "YOUR_CENSYS_API_KEY"
+  hackerone: "YOUR_HACKERONE_API_KEY"
+  bugcrowd: "YOUR_BUGCROWD_API_KEY"
+  haveibeenpwned: "YOUR_HIBP_API_KEY"
+  ollama_url: "http://localhost:11434"
+
+# Rate Limiting
+rate_limit:
+  requests_per_second: 5
+  concurrent_requests: 10
+  timeout: 30
+  retry_attempts: 3
+
+# Scanner Ayarları
+scanner:
+  # Keşif
+  enable_subdomain_enum: true
+  enable_tech_detection: true
+  enable_js_analysis: true
+  enable_directory_bruteforce: false
+  
+  # Zafiyet Taraması
+  check_sqli: true
+  check_xss: true
+  check_idor: true
+  check_lfi: true
+  check_ssrf: true
+  check_auth_bypass: true
+  check_cors: true
+  check_headers: true
+  check_ssl: true
+  check_git_exposure: true
+  check_cloud_config: true
+  check_jwt: true
+  
+  # Raporlama
+  calculate_cvss: true
+  generate_poc: true
+  estimate_bounty: true
+
+# Proxy Ayarları
+proxy:
+  enabled: false
+  http_proxy: ""
+  https_proxy: ""
+  socks5_proxy: ""
